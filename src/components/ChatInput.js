@@ -11,7 +11,7 @@ const ChatInput = ({chatList, setChatList}) => {
     event.preventDefault();
     //todoList에 input 값 추가
     const newChatList = chatList.concat({
-      id: Date.now(),
+      msgId: Date.now(),
       text,
     });
     setChatList(newChatList);

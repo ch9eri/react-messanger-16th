@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Chat = ({id, text}) => {
+const Chat = (chat) => {
+    const {userId, text, msgId} = chat;
     return (
         <li>
-            <span id={id}>{text}</span>
+            <span userId={userId} msgId={msgId}>{text}</span>
         </li>
     );
 };
