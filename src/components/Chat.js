@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Chat = () => {
+const Chat = ({id, text}) => {
     return (
-        <div>
-            
-        </div>
+        <li>
+            <span id={id}>{text}</span>
+        </li>
     );
 };
 
