@@ -39,7 +39,7 @@ const ChatInputContainer = styled.form`
   padding: 10px;
 `;
 
-const Input = styled.input`
+const Input = styled.input.attrs({ required: true })`
   border: none;
 `;
 
