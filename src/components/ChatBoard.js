@@ -2,7 +2,7 @@ import React from 'react';
 import Chat from './Chat';
 import message from '../data/message.json';
 
-const ChatBoard = ({ chatList, setChatList }) => {
+const ChatBoard = ({ currentUser, chatList, setChatList }) => {
   return (
     <div>
       <ul>

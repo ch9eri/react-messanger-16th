@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ChatInput = ({chatList, setChatList}) => {
+const ChatInput = ({currentUser, chatList, setChatList}) => {
   const [text, setText] = useState('');
 
   const onChange = (event) => {

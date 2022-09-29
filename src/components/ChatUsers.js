@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ChatUsers = () => {
+const ChatUsers = ({currentUser}) => {
     return (
-        <div>
-            <p></p>
-        </div>
+        <button>
+            {currentUser.name}
+        </button>
     );
 };
 

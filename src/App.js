@@ -4,18 +4,20 @@ import ChatInput from "./components/ChatInput";
 import ChatBoard from './components/ChatBoard';
 import ChatUsers from './components/ChatUsers';
 import { useState } from 'react';
+import user from './data/user.json';
 
 function App() {
   const [chatList, setChatList] = useState([]);
+  const [currentUser, setCurrentUser] = useState(user[0]);
 
   return(
     <>
       <GlobalStyle />
       <Wrapper>
         <Container>
-          <ChatUsers />
-          <ChatBoard chatList={chatList} setChatList={setChatList} />
-          <ChatInput chatList={chatList} setChatList={setChatList} />
+          <ChatUsers currentUser={currentUser} />
+          <ChatBoard chatList={chatList} setChatList={setChatList} currentUser={currentUser} />
+          <ChatInput chatList={chatList} setChatList={setChatList} currentUser={currentUser} />
         </Container>
       </Wrapper>
     </>
@@ -32,7 +34,6 @@ const GlobalStyle = createGlobalStyle`
 
     button {
         background-color: transparent;
-        border: none;
         font-size: 20px;
         cursor: pointer;
     }
