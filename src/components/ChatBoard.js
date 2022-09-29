@@ -1,10 +1,11 @@
 import React from 'react';
 import Chat from './Chat';
 import message from '../data/message.json';
+import styled from 'styled-components';
 
 const ChatBoard = ({ currentUser, chatList, setChatList }) => {
   return (
-    <div>
+    <ChatBoardContainer>
       <ul>
         {message.map((chat) => (
           <Chat
@@ -21,8 +22,12 @@ const ChatBoard = ({ currentUser, chatList, setChatList }) => {
           />
         ))}
       </ul>
-    </div>
+    </ChatBoardContainer>
   );
 };
+
+const ChatBoardContainer = styled.div`
+  background-color: #85C1E9;
+`;
 
 export default ChatBoard;

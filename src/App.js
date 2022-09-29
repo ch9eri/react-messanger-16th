@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import ChatInput from "./components/ChatInput";
+import ChatInput from './components/ChatInput';
 import ChatBoard from './components/ChatBoard';
 import ChatUsers from './components/ChatUsers';
 import { useState } from 'react';
@@ -10,14 +10,22 @@ function App() {
   const [chatList, setChatList] = useState([]);
   const [currentUser, setCurrentUser] = useState(user[0]);
 
-  return(
+  return (
     <>
       <GlobalStyle />
       <Wrapper>
         <Container>
           <ChatUsers currentUser={currentUser} />
-          <ChatBoard chatList={chatList} setChatList={setChatList} currentUser={currentUser} />
-          <ChatInput chatList={chatList} setChatList={setChatList} currentUser={currentUser} />
+          <ChatBoard
+            chatList={chatList}
+            setChatList={setChatList}
+            currentUser={currentUser}
+          />
+          <ChatInput
+            chatList={chatList}
+            setChatList={setChatList}
+            currentUser={currentUser}
+          />
         </Container>
       </Wrapper>
     </>
@@ -36,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: transparent;
         font-size: 20px;
         cursor: pointer;
+        border: none;
     }
 
 `;
@@ -46,17 +55,16 @@ const Wrapper = styled.div`
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  border-radius: 20px;
 `;
 
 const Container = styled.div`
-  background-color: #85C1E9;
   border-radius: 20px;
   width: 400px;
   height: 600px;
   box-shadow: 1px 1px 10px gray;
-  padding: 30px;
   display: grid;
-  grid-template-rows: 1fr 6fr 1fr;
+  grid-template-rows: 1fr 5fr 1.5fr;
 `;
 
 export default App;
