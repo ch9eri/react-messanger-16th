@@ -12,6 +12,7 @@ const ChatBoard = ({ currentUser, chatList, setChatList }) => {
             key={chat.msgId}
             text={chat.text}
             userId={chat.userId}
+            name={chat.name}
           />
         ))}
         {chatList.map((chat) => (
@@ -19,6 +20,7 @@ const ChatBoard = ({ currentUser, chatList, setChatList }) => {
             key={chat.msgId}
             text={chat.text}
             userId={chat.userId}
+            name={chat.name}
           />
         ))}
       </ul>

@@ -14,6 +14,7 @@ const ChatInput = ({ currentUser, chatList, setChatList }) => {
     const newChatList = chatList.concat({
       msgId: Date.now(),
       text,
+      name: currentUser.name
     });
     setChatList(newChatList);
     setText('');
