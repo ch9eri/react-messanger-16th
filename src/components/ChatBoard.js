@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const ChatBoard = ({ currentUser, chatList, setChatList }) => {
   return (
     <ChatBoardContainer>
-      <ul>
+      <UserChat>
         {message.map((chat) => (
           <Chat
             key={chat.msgid}
@@ -23,13 +23,17 @@ const ChatBoard = ({ currentUser, chatList, setChatList }) => {
             name={chat.name}
           />
         ))}
-      </ul>
+      </UserChat>
     </ChatBoardContainer>
   );
 };
 
 const ChatBoardContainer = styled.div`
-  background-color: #85C1E9;
+  background-color: #85c1e9;
+`;
+
+const UserChat = styled.ul`
+  list-style: none;
 `;
 
 export default ChatBoard;

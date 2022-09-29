@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ch9eri from '../img/ch9eri.PNG';
+//import ch9eri from '../img/ch9eri.PNG';
 import user from '../data/user.json';
 
 const ChatUsers = ({ currentUser, setCurrentUser }) => {
@@ -10,23 +10,28 @@ const ChatUsers = ({ currentUser, setCurrentUser }) => {
   };
 
   return (
-    <button onClick={onToggleUser}>
-      <UserImg src={ch9eri} />
+    <UserBtn onClick={onToggleUser}>
+      {/* 엑박 뜸 */}
+      <UserImg src={`./img/${currentUser.name}.png`} />
       <UserName>{currentUser.name}</UserName>
-    </button>
+    </UserBtn>
   );
 };
+
+const UserBtn = styled.button``;
 
 const UserImg = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 1px solid gray;
+  display: flex;
 `;
 
 const UserName = styled.span`
   font-size: 10px;
-  position: static;
+  display: flex;
+  flex-direction: row;
 `;
 
 export default ChatUsers;
