@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Chat = (chat) => {
-  const { userId, text, msgId, name } = chat;
+  const { userid, text, msgid, name } = chat;
   return (
     <li>
-      <span userId={userId}>{name}</span>
-      <span userId={userId} msgId={msgId}>
+      <span userid={userid}>{name}</span>
+      <span userid={userid} msgid={msgid}>
         {text}
       </span>
     </li>

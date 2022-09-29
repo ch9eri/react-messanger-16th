@@ -9,17 +9,17 @@ const ChatBoard = ({ currentUser, chatList, setChatList }) => {
       <ul>
         {message.map((chat) => (
           <Chat
-            key={chat.msgId}
+            key={chat.msgid}
             text={chat.text}
-            userId={chat.userId}
+            userid={chat.userid}
             name={chat.name}
           />
         ))}
         {chatList.map((chat) => (
           <Chat
-            key={chat.msgId}
+            key={chat.msgid}
             text={chat.text}
-            userId={chat.userId}
+            userid={chat.userid}
             name={chat.name}
           />
         ))}

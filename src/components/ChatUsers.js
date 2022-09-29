@@ -1,10 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import ch9eri from '../img/ch9eri.PNG';
+import user from '../data/user.json';
 
-const ChatUsers = ({ currentUser }) => {
+const ChatUsers = ({ currentUser, setCurrentUser }) => {
+  const onToggleUser = () => {
+    currentUser === user[0] ? setCurrentUser(user[1]) : setCurrentUser(user[0]);
+    console.log(currentUser);
+  };
+
   return (
-    <button>
+    <button onClick={onToggleUser}>
       <UserImg src={ch9eri} />
       <UserName>{currentUser.name}</UserName>
     </button>

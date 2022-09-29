@@ -1,14 +1,14 @@
 [
   {
-    "userId": "1",
+    "userid": 1,
     "name": "ch9eri",
     "text": "과제 중입니다",
-    "msgId": "1"
+    "msgid": 1
   },
   {
-    "userId": "2",
+    "userid": 2,
     "name": "ceos",
     "text": "과제 제출하세요",
-    "msgId": "2"
+    "msgid": 2
   }
 ]
