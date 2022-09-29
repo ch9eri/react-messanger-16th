@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-//import ch9eri from '../img/ch9eri.PNG';
+//import ch9eri from '../img/ch9eri.png';
 import user from '../data/user.json';
 
 const ChatUsers = ({ currentUser, setCurrentUser }) => {

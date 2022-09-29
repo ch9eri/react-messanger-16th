@@ -23,8 +23,15 @@ const UserImg = styled.img`
 const UserName = styled.span`
   display: flex;
   flex-direction: row;
+  padding: 10px;
+  margin-bottom: 5px;
 `;
 
-const Text = styled.span``;
+const Text = styled.span`
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+`;
 
 export default Chat;
