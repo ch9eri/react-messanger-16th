@@ -31,6 +31,7 @@ const Li = styled.li`
 const UserImg = styled.img`
   width: 30px;
   height: 30px;
+  border-radius: 50%;
 `;
 
 const UserName = styled.span`

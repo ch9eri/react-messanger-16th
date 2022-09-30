@@ -17,7 +17,12 @@ const ChatUsers = ({ currentUser, setCurrentUser }:any) => {
   );
 };
 
-const UserBtn = styled.button``;
+const UserBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 
 const UserImg = styled.img`
   width: 50px;
@@ -25,12 +30,12 @@ const UserImg = styled.img`
   border-radius: 50%;
   border: 1px solid gray;
   display: flex;
+  margin: 5px;
 `;
 
 const UserName = styled.span`
-  font-size: 10px;
-  display: flex;
-  flex-direction: row;
+  font-size: 15px;
+  margin-top: 5px;
 `;
 
 export default ChatUsers;
