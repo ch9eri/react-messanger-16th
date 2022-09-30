@@ -46,6 +46,11 @@ const Input = styled.input.attrs({ required: true })`
 const SubmitBtn = styled.button`
   padding: 10px;
   font-size: 30px;
+  cursor: pointer;
+  &:active {
+    box-shadow: 1px 1px  1px 1px rgb(0,0,0,0.5);
+    border-radius: 10px;
+  }
 `;
 
 export default ChatInput;

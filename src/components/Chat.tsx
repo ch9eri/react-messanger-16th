@@ -6,26 +6,22 @@ interface IChat {
   name: string;
 }
 
-const Chat = ({ text, name }:IChat) => {
-  
+const Chat = ({ text, name }: IChat) => {
   return (
     <Li>
       <UserImg src={`./img/${name}.png`} />
       <div>
-      <UserName>{name}</UserName>
-      <Text>
-        {text}
-      </Text>
+        <UserName>{name}</UserName>
+        <Text>{text}</Text>
       </div>
     </Li>
   );
 };
 
 const Li = styled.li`
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 `;
-
 
 const UserImg = styled.img`
   width: 30px;
@@ -41,10 +37,10 @@ const UserName = styled.span`
 `;
 
 const Text = styled.span`
-    background-color: white;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
 `;
 
 export default Chat;
