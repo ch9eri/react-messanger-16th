@@ -15,7 +15,7 @@ function App() {
       <GlobalStyle />
       <Wrapper>
         <Container>
-          <ChatUsers currentUser={currentUser} />
+          <ChatUsers currentUser={currentUser} setCurrentUser={setCurrentUser} />
           <ChatBoard chatList={chatList} setChatList={setChatList} currentUser={currentUser} />
           <ChatInput chatList={chatList} setChatList={setChatList} currentUser={currentUser} />
         </Container>

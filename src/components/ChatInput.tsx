@@ -18,7 +18,7 @@ const ChatInput = ({ currentUser, chatList, setChatList }:any) => {
     });
     setChatList(newChatList);
     setText('');
-    console.log(currentUser);
+    console.log(currentUser.name);
   };
 
   return (
