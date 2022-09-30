@@ -25,6 +25,7 @@ const UserBtn = styled.button`
   flex-direction: column;
 `;
 
+
 const UserImg = styled.img`
   width: 50px;
   height: 50px;
