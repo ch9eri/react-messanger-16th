@@ -10,7 +10,6 @@ const Chat = ({ text, name }:IChat) => {
   
   return (
     <Li>
-      {/* 엑박 뜸 */}
       <UserImg src={`./img/${name}.png`} />
       <div>
       <UserName>{name}</UserName>

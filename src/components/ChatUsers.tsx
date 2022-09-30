@@ -10,7 +10,6 @@ const ChatUsers = ({ currentUser, setCurrentUser }:any) => {
 
   return (
     <UserBtn onClick={onToggleUser}>
-      {/* 엑박 뜸 */}
       <UserImg src={`./img/${currentUser.name}.png`} />
       <UserName>{currentUser.name}</UserName>
     </UserBtn>

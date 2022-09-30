@@ -10,7 +10,6 @@ const ChatInput = ({ currentUser, chatList, setChatList }:any) => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    //todoList에 input 값 추가
     const newChatList = chatList.concat({
       msgId: Date.now(),
       text,
