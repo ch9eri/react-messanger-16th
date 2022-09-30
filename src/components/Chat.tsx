@@ -1,23 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Chat = (chat, currentUser) => {
-  const { userid, text, msgid, name } = chat;
+interface IChat {
+  text: string;
+  name: string;
+}
+
+const Chat = ({ text, name }:IChat) => {
+  
   return (
-    <li>
+    <Li>
       {/* 엑박 뜸 */}
-      <UserImg src={`./img/${currentUser.name}.png`}></UserImg>
-      <UserName userid={userid}>{name}</UserName>
-      <Text userid={userid} msgid={msgid}>
+      <UserImg src={`./img/${name}.png`} />
+      <div>
+      <UserName>{name}</UserName>
+      <Text>
         {text}
       </Text>
-    </li>
+      </div>
+    </Li>
   );
 };
 
+const Li = styled.li`
+    display: flex;
+    flex-direction: row;
+`;
+
+
 const UserImg = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 `;
 
 const UserName = styled.span`

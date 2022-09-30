@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const ChatInput = ({ currentUser, chatList, setChatList }) => {
+const ChatInput = ({ currentUser, chatList, setChatList }:any) => {
   const [text, setText] = useState('');
 
-  const onChange = (event) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     //todoList에 input 값 추가
     const newChatList = chatList.concat({

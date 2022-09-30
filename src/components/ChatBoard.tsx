@@ -3,24 +3,30 @@ import Chat from './Chat';
 import message from '../data/message.json';
 import styled from 'styled-components';
 
-const ChatBoard = ({ currentUser, chatList, setChatList }) => {
+interface IUserChat {
+  msgid: number;
+  text: string;
+  userid: number;
+  name: string;
+}
+
+const ChatBoard = ({ currentUser, chatList, setChatList }:any) => {
+
   return (
     <ChatBoardContainer>
       <UserChat>
-        {message.map((chat) => (
+        {message.map(({ text, name, msgid, userid }:IUserChat) => (
           <Chat
-            key={chat.msgid}
-            text={chat.text}
-            userid={chat.userid}
-            name={chat.name}
+            key={msgid}
+            text={text}
+            name={name}
           />
         ))}
-        {chatList.map((chat) => (
+        {chatList.map(({ text, name, msgid, userid }:IUserChat) => (
           <Chat
-            key={chat.msgid}
-            text={chat.text}
-            userid={chat.userid}
-            name={chat.name}
+            key={msgid}
+            text={text}
+            name={name}
           />
         ))}
       </UserChat>
