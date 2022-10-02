@@ -21,7 +21,7 @@ const ChatBoard = ({ currentUser, chatList, setChatList }: any) => {
     <ChatBoardContainer ref={chatBoardRef}>
       <UserChat>
         {chatList.map(({ text, name, msgid, userid }: IUserChat) => (
-          <Chat key={msgid} text={text} name={name} />
+          <Chat key={msgid} text={text} name={name} currentUser={currentUser} />
         ))}
       </UserChat>
     </ChatBoardContainer>

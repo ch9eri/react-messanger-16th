@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import user from '../data/user.json';
 import { IChat } from './interface';
 
-const Chat = ({ text, name }: IChat) => {
+const Chat = ({ text, name, currentUser }: any) => {
   return (
     <>
-      {name === user[0].name ? (
+      {name === currentUser.name ? (
         <Li1>
           <UserImg src={`./img/${name}.png`} />
           <div>
@@ -29,13 +28,13 @@ const Chat = ({ text, name }: IChat) => {
 
 const Li1 = styled.li`
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  margin-right: 20px;
 `;
 
 const Li2 = styled.li`
   display: flex;
-  flex-direction: row-reverse;
-  margin-right: 20px;
+  flex-direction: row;
 `;
 
 const UserImg = styled.img`
@@ -46,14 +45,14 @@ const UserImg = styled.img`
 
 const UserName1 = styled.span`
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   padding: 10px;
   margin-bottom: 5px;
 `;
 
 const UserName2 = styled.span`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   padding: 10px;
   margin-bottom: 5px;
 `;

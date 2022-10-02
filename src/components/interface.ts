@@ -3,7 +3,7 @@ interface IChat {
   name: string;
 }
 
-interface IUserChat extends IUser{
+interface IUserChat extends IUser {
   msgid: number;
   text: string;
 }

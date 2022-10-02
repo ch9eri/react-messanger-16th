@@ -5,7 +5,7 @@ import user from '../data/user.json';
 const ChatUsers = ({ currentUser, setCurrentUser }: any) => {
   const onToggleUser = () => {
     currentUser === user[0] ? setCurrentUser(user[1]) : setCurrentUser(user[0]);
-    console.log(currentUser);
+    console.log(currentUser.name)
   };
 
   return (
