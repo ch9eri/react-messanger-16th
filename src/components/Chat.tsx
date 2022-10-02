@@ -1,24 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IChat } from './interface';
 
-interface IChat {
-  text: string;
-  name: string;
-}
-
-const Chat = ({ text, name }: IChat) => {
+const Chat = ({ text, name, currentUser }: any) => {
   return (
-    <Li>
-      <UserImg src={`./img/${name}.png`} />
-      <div>
-        <UserName>{name}</UserName>
-        <Text>{text}</Text>
-      </div>
-    </Li>
+    <>
+      {name === currentUser.name ? (
+        <Li1>
+          <UserImg src={`./img/${name}.png`} />
+          <div>
+            <UserName1>{name}</UserName1>
+            <Text>{text}</Text>
+          </div>
+        </Li1>
+      ) : (
+        <Li2>
+          <UserImg src={`./img/${name}.png`} />
+          <div>
+            <UserName2>{name}</UserName2>
+            <Text>{text}</Text>
+          </div>
+        </Li2>
+      )}
+    </>
   );
 };
 
-const Li = styled.li`
+const Li1 = styled.li`
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20px;
+`;
+
+const Li2 = styled.li`
   display: flex;
   flex-direction: row;
 `;
@@ -29,7 +43,14 @@ const UserImg = styled.img`
   border-radius: 50%;
 `;
 
-const UserName = styled.span`
+const UserName1 = styled.span`
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px;
+  margin-bottom: 5px;
+`;
+
+const UserName2 = styled.span`
   display: flex;
   flex-direction: row;
   padding: 10px;

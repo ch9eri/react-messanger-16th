@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const ChatInput = ({ currentUser, chatList, setChatList }:any) => {
+const ChatInput = ({ currentUser, chatList, setChatList }: any) => {
   const [text, setText] = useState('');
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +13,7 @@ const ChatInput = ({ currentUser, chatList, setChatList }:any) => {
     const newChatList = chatList.concat({
       msgId: Date.now(),
       text,
-      name: currentUser.name
+      name: currentUser.name,
     });
     setChatList(newChatList);
     setText('');
@@ -48,7 +48,7 @@ const SubmitBtn = styled.button`
   font-size: 30px;
   cursor: pointer;
   &:active {
-    box-shadow: 1px 1px  1px 1px rgb(0,0,0,0.5);
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.5);
     border-radius: 10px;
   }
 `;
