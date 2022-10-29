@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import user from '../data/user.json';
+import { IUser } from './interface';
+import {userAtom} from '../atoms';
+import {useRecoilState} from 'recoil';
 
-const ChatUsers = ({ currentUser, setCurrentUser }: any) => {
+function ChatUsers(){
+  const [currentUser, setCurrentUser] = useRecoilState<IUser>(userAtom);
   const onToggleUser = () => {
     currentUser === user[0] ? setCurrentUser(user[1]) : setCurrentUser(user[0]);
-    console.log(currentUser.name)
+    console.log(setCurrentUser)
   };
 
   return (

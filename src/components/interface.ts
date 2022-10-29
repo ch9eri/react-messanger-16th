@@ -13,4 +13,5 @@ interface IUser {
   name: string;
 }
 
+
 export type { IChat, IUserChat, IUser };

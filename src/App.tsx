@@ -3,29 +3,21 @@ import { createGlobalStyle } from 'styled-components';
 import ChatInput from './components/ChatInput';
 import ChatBoard from './components/ChatBoard';
 import ChatUsers from './components/ChatUsers';
-import { useState } from 'react';
-import user from './data/user.json';
-import message from './data/message.json';
 import { IUser, IUserChat } from './components/interface';
+import {listAtom,userAtom} from './atoms';
+import {useRecoilState} from 'recoil';
 
 function App() {
-  const [chatList, setChatList] = useState<IUserChat[]>(message);
-  const [currentUser, setCurrentUser] = useState<IUser>(user[0]);
+  const [chatList, setChatList] = useRecoilState<IUserChat[]>(listAtom);
+  const [currentUser, setCurrentUser] = useRecoilState<IUser>(userAtom);
 
   return (
     <>
       <GlobalStyle />
       <Wrapper>
         <Container>
-          <ChatUsers
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
-          <ChatBoard
-            chatList={chatList}
-            setChatList={setChatList}
-            currentUser={currentUser}
-          />
+          <ChatUsers/>
+          <ChatBoard/>
           <ChatInput
             chatList={chatList}
             setChatList={setChatList}

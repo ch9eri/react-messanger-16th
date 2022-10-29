@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IChat } from './interface';
+// import { IChat } from './interface';
 
 const Chat = ({ text, name, currentUser }: any) => {
   return (
