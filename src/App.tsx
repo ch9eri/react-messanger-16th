@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 import Chats from './pages/Chats';
 import Friends from './pages/Friends';
 import Settings from './pages/Settings';
+import NavBar from './NavBar';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <GlobalStyle />
         <Wrapper>
           <Container>
+            <NavBar />
             <Routes>
               <Route path='/' element={<Friends />} />
               <Route path='/chats' element={<Chats />} />
@@ -58,7 +60,8 @@ const Container = styled.div`
   height: 600px;
   box-shadow: 1px 1px 10px gray;
   display: grid;
-  grid-template-rows: 1fr 5fr 1.5fr;
+  grid-template-columns: 1fr 5fr;
 `;
+
 
 export default App;
