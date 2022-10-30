@@ -1,6 +1,6 @@
 const Settings = () => {
     return(
-        <div></div>
+        <h3>더보기</h3>
     );
 }
 

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import { RecoilRoot } from "recoil";
-import Chats from './pages/Chats';
-import Friends from './pages/Friends';
-import Settings from './pages/Settings';
+import Chats from './pages/ChatsPage';
+import Friends from './pages/FriendsPage';
+import Settings from './pages/SettingsPage';
 import NavBar from './NavBar';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 

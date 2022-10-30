@@ -1,16 +1,16 @@
 interface IChat {
-  text: string;
-  name: string;
+  text?: string;
+  name?: string;
 }
 
 interface IUserChat extends IUser {
-  msgid: number;
-  text: string;
+  msgid?: number;
+  text?: string;
 }
 
 interface IUser {
-  userid: number;
-  name: string;
+  userid?: number;
+  name?: string;
 }
 
 

@@ -1,13 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 import Chat from './Chat';
 import styled from 'styled-components';
-import { IUser, IUserChat } from '../../interface';
-import { listAtom,userAtom } from '../../atoms';
+import { IUserChat } from '../../interface';
+import { listAtom } from '../../atoms';
 import {useRecoilState} from 'recoil';
 
 function ChatBoard() {
   const [chatList, ] = useRecoilState<IUserChat[]>(listAtom);
-  const [currentUser, ] = useRecoilState<IUser>(userAtom);
   const chatBoardRef = useRef<HTMLDivElement>(null);
 
   const scrollDown = () => {
@@ -23,7 +22,7 @@ function ChatBoard() {
   return (
     <ChatBoardContainer ref={chatBoardRef}>
       <UserChat>
-        {chatList.map(({ text, name, msgid, userid }: IUserChat) => (
+        {chatList.map(({ text, name, msgid }: IUserChat) => (
           <Chat key={msgid} text={text} name={name} />
         ))}
       </UserChat>

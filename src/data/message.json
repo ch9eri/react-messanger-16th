@@ -2,13 +2,19 @@
   {
     "userid": 1,
     "name": "ch9eri",
-    "text": "과제 중입니다",
+    "text": "안녕 나는 채리",
     "msgid": 1
   },
   {
     "userid": 2,
-    "name": "ceos",
-    "text": "과제 제출하세요",
+    "name": "orange",
+    "text": "안녕 나는 오렌지",
     "msgid": 2
+  },
+  {
+    "userid": 2,
+    "name": "orange",
+    "text": "오렌지를 먹은 지 얼마나 오랜지",
+    "msgid": 3
   }
 ]

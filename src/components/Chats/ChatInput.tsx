@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { IUser, IUserChat } from '../../interface';
+import {listAtom,userAtom} from '../../atoms';
+import {useRecoilState} from 'recoil';
 
-const ChatInput = ({ currentUser, chatList, setChatList }: any) => {
+const ChatInput = () => {
+  const [chatList, setChatList] = useRecoilState<IUserChat[]>(listAtom);
+  const [currentUser, ] = useRecoilState<IUser>(userAtom);
   const [text, setText] = useState('');
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -11,7 +16,7 @@ const ChatInput = ({ currentUser, chatList, setChatList }: any) => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const newChatList = chatList.concat({
-      msgId: Date.now(),
+      msgid: Date.now(),  //타입에러
       text,
       name: currentUser.name,
     });
