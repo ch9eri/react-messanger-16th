@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 import message from './data/message.json';
 import user from './data/user.json';
-import { IUserChat,IUser } from './components/interface';
+import { IUserChat,IUser } from './interface';
 
 
 export const listAtom = atom<IUserChat[]>({

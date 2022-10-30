@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { IChat } from './interface';
+import { IUser,IChat } from '../../interface';
+import { userAtom } from '../../atoms';
+import {useRecoilState} from 'recoil';
 
-const Chat = ({ text, name, currentUser }: any) => {
+const Chat = ({ text, name }: IChat) => {
+  const [currentUser, ] = useRecoilState<IUser>(userAtom);
   return (
     <>
       {name === currentUser.name ? (

@@ -1,31 +1,28 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import ChatInput from './components/ChatInput';
-import ChatBoard from './components/ChatBoard';
-import ChatUsers from './components/ChatUsers';
-import { IUser, IUserChat } from './components/interface';
-import {listAtom,userAtom} from './atoms';
-import {useRecoilState} from 'recoil';
+import { RecoilRoot } from "recoil";
+import Chats from './pages/Chats';
+import Friends from './pages/Friends';
+import Settings from './pages/Settings';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const [chatList, setChatList] = useRecoilState<IUserChat[]>(listAtom);
-  const [currentUser, setCurrentUser] = useRecoilState<IUser>(userAtom);
 
   return (
-    <>
-      <GlobalStyle />
-      <Wrapper>
-        <Container>
-          <ChatUsers/>
-          <ChatBoard/>
-          <ChatInput
-            chatList={chatList}
-            setChatList={setChatList}
-            currentUser={currentUser}
-          />
-        </Container>
-      </Wrapper>
-    </>
+    <BrowserRouter>
+      <RecoilRoot>
+        <GlobalStyle />
+        <Wrapper>
+          <Container>
+            <Routes>
+              <Route path='/' element={<Friends />} />
+              <Route path='/chats' element={<Chats />} />
+              <Route path='/settings' element={<Settings />} />
+            </Routes>
+          </Container>
+        </Wrapper>
+      </RecoilRoot>
+    </BrowserRouter>
   );
 }
 

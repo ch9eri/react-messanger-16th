@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import user from '../data/user.json';
-import { IUser } from './interface';
-import {userAtom} from '../atoms';
+import user from '../../data/user.json';
+import { IUser } from '../../interface';
+import { userAtom } from '../../atoms';
 import {useRecoilState} from 'recoil';
 
 function ChatUsers(){
