@@ -1,22 +1,27 @@
 [
   {
     "userid": 1,
-    "name": "ch9eri"
+    "name": "ch9eri",
+    "status": "정신체리!"
   },
   {
     "userid": 2,
-    "name": "orange"
+    "name": "orange",
+    "status": "오렌지를 먹은 지 얼마나 오렌지"
   },
   {
     "userid": 3,
-    "name": "lemon"
+    "name": "banana",
+    "status": "바나나 먹으면 세오스한테 바나나"
   },
   {
     "userid": 4,
-    "name": "grape"
+    "name": "grape",
+    "status": "놀고시포도 참아"
   },
   {
     "userid": 5,
-    "name": "watermelon"
+    "name": "watermelon",
+    "status": "과제를 할 수박에"
   }
 ]

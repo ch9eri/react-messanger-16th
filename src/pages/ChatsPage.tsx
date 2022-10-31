@@ -4,19 +4,18 @@ import ChatInput from '../components/Chats/ChatInput';
 import ChatBoard from '../components/Chats/ChatBoard';
 
 function Chats() {
-
-    return (
-        <ChatRoom>
-            <ChatUsers />
-            <ChatBoard />
-            <ChatInput />
-        </ChatRoom>
-    );
-};
+  return (
+    <ChatRoom>
+      <ChatUsers />
+      <ChatBoard />
+      <ChatInput />
+    </ChatRoom>
+  );
+}
 
 const ChatRoom = styled.div`
-    display: grid;
-    grid-template-rows: 1fr 5fr 3fr;
+  display: grid;
+  grid-template-rows: 1fr 5fr 3fr;
 `;
 
 export default Chats;

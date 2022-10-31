@@ -13,5 +13,8 @@ interface IUser {
   name?: string;
 }
 
+interface IFriendList extends IUser {
+  status: string;
+}
 
-export type { IChat, IUserChat, IUser };
+export type { IChat, IUserChat, IUser, IFriendList };

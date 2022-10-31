@@ -1,12 +1,13 @@
 import user from '../../data/user.json';
 import Friend from './Friend';
-import { IUserChat } from '../../interface';
+import { IFriendList } from '../../interface';
+
 
 function FriendList() {
     return (
         <div>
-            {user.map(({text,name,userid}:IUserChat)=>(
-                <Friend key={userid} text={text} name={name}/>
+            {user.map(({userid, status, name}:IFriendList)=>(
+                <Friend key={userid} status={status} name={name}/>
             ))}
         </div>
     );
