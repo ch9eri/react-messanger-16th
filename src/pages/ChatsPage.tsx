@@ -3,19 +3,19 @@ import ChatUsers from '../components/Chats/ChatUsers';
 import ChatInput from '../components/Chats/ChatInput';
 import ChatBoard from '../components/Chats/ChatBoard';
 
-function Chats() {
+function ChatsPage() {
   return (
-    <ChatRoom>
+    <ChatsPageContainer>
       <ChatUsers />
       <ChatBoard />
       <ChatInput />
-    </ChatRoom>
+    </ChatsPageContainer>
   );
 }
 
-const ChatRoom = styled.div`
+const ChatsPageContainer = styled.div`
   display: grid;
   grid-template-rows: 1fr 5fr 3fr;
 `;
 
-export default Chats;
+export default ChatsPage;

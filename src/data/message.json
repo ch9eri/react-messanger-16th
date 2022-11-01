@@ -1,8 +1,8 @@
 [
   {
     "roomid": 1,
-    "userid": 1,
-    "name": "ch9eri",
+    "userid": 2,
+    "name": "orange",
     "msg": [
       {
         "userid": 1,
@@ -23,7 +23,30 @@
         "msgid": 3
       }
     ]
-    
+  },
+  {
+    "roomid": 2,
+    "userid": 3,
+    "name": "banana",
+    "msg": [
+      
+    ]
+  },
+  {
+    "roomid": 3,
+    "userid": 4,
+    "name": "grape",
+    "msg": [
+      
+    ]
+  },
+  {
+    "roomid": 4,
+    "userid": 5,
+    "name": "watermelon",
+    "msg": [
+      
+    ]
   }
   
 ]

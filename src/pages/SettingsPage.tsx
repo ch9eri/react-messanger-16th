@@ -1,7 +1,17 @@
-const Settings = () => {
+import styled from 'styled-components';
+
+const SettingsPage = () => {
     return(
-        <h3>더보기</h3>
+        <SettingsPageContainer>
+            <h3>더보기</h3>
+        </SettingsPageContainer>
     );
 }
 
-export default Settings;
+const SettingsPageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+`;
+
+export default SettingsPage;

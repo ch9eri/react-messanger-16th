@@ -11,7 +11,7 @@ const NavBar = () => {
                 </Link>
             </Icons>
             <Icons>
-                <Link to ='/chats'>
+                <Link to ='/chatlist'>
                     <BsChatFill color={'#696969'}/>
                 </Link>
             </Icons>
