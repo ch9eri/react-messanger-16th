@@ -9,7 +9,7 @@ function ChatUsers(){
   const [currentUser, setCurrentUser] = useRecoilState<IUser>(userAtom);
   const onToggleUser = () => {
     currentUser === user[0] ? setCurrentUser(user[1]) : setCurrentUser(user[0]);
-    console.log(setCurrentUser)
+    console.log(setCurrentUser.name)
   };
 
   return (

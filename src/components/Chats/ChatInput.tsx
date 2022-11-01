@@ -16,7 +16,7 @@ const ChatInput = () => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const newChatList = chatList.concat({
-      msgid: Date.now(),  //타입에러
+      msgid: Date.now(),
       text,
       name: currentUser.name,
     });

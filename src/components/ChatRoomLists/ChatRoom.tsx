@@ -6,13 +6,13 @@ import {Link} from 'react-router-dom';
 const ChatRoom = ({text,name,roomid}:IChatRoomList) => {
     return (
         <ChatRoomContainer>
-            <LinkTo to ='/chatroom'>
+            <Link to ={`/chatroom/${name}`} >
                 <ChatRoomImg src={`./img/${name}.png`} />
                 <div>
                     <ChatRoomName>{name}</ChatRoomName>
-                    <ChatRoomText></ChatRoomText>
+                    <ChatRoomText>{text}</ChatRoomText>
                 </div>
-            </LinkTo>
+            </Link>
         </ChatRoomContainer>
     );
 };
@@ -25,12 +25,12 @@ const ChatRoomContainer = styled.div`
     margin-left: 10px;
 `;
 
-const LinkTo = styled(Link)`
-    text-decoration: none;
-    color: black;
-    display: flex;
-    flex-direction: row;
-`;
+// const LinkTo = styled(Link)`
+//     text-decoration: none;
+//     color: black;
+//     display: flex;
+//     flex-direction: row;
+// `;
 
 const ChatRoomImg = styled.img`
   width: 40px;

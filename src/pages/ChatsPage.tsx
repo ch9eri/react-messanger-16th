@@ -15,7 +15,7 @@ function ChatsPage() {
 
 const ChatsPageContainer = styled.div`
   display: grid;
-  grid-template-rows: 1fr 5fr 3fr;
+  grid-template-rows: 90px 400px ;
 `;
 
 export default ChatsPage;
