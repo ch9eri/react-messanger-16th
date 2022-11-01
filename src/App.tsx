@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import { RecoilRoot } from "recoil";
+import { RecoilRoot } from 'recoil';
 import ChatRoomListPage from './pages/ChatRoomListPage';
 import FriendsPage from './pages/FriendsPage';
 import SettingsPage from './pages/SettingsPage';
 import ChatsPage from './pages/ChatsPage';
 import NavBar from './NavBar';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-
   return (
     <BrowserRouter>
       <RecoilRoot>
@@ -18,10 +17,10 @@ function App() {
           <Container>
             <NavBar />
             <Routes>
-              <Route path='/' element={<FriendsPage />} />
-              <Route path='/chatlist' element={<ChatRoomListPage />} />
-              <Route path='/chatroom' element={<ChatsPage />} />
-              <Route path='/settings' element={<SettingsPage />} />
+              <Route path="/" element={<FriendsPage />} />
+              <Route path="/chatlist" element={<ChatRoomListPage />} />
+              <Route path="/chatroom" element={<ChatsPage />} />
+              <Route path="/settings" element={<SettingsPage />} />
             </Routes>
           </Container>
         </Wrapper>
@@ -64,6 +63,5 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 5fr;
 `;
-
 
 export default App;

@@ -17,7 +17,7 @@ interface IFriendList extends IUser {
   status: string;
 }
 
-interface IChatRoomList extends IUserChat{
+interface IChatRoomList extends IUserChat {
   roomid: number;
 }
 
