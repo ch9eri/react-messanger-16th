@@ -31,8 +31,15 @@ const UserImg = styled.img`
   border-radius: 50%;
 `;
 
-const UserName = styled.div``;
+const UserName = styled.div`
+  font-size: 17px;
+  font-weight: 500;
+`;
 
-const UserStatus = styled.div``;
+const UserStatus = styled.div`
+  color: gray;
+  font-size: 13px;
+  margin-top: 2px;
+`;
 
 export default Friend;

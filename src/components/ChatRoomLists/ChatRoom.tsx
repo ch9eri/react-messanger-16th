@@ -1,36 +1,26 @@
 import React from 'react';
-import styled from  'styled-components';
-import {IChatRoomList} from '../../interface';
-import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+import { IChatRoomList } from '../../interface';
 
-const ChatRoom = ({text,name,roomid}:IChatRoomList) => {
-    return (
-        <ChatRoomContainer>
-            <Link to ={`/chatroom/${name}`} >
-                <ChatRoomImg src={`./img/${name}.png`} />
-                <div>
-                    <ChatRoomName>{name}</ChatRoomName>
-                    <ChatRoomText>{text}</ChatRoomText>
-                </div>
-            </Link>
-        </ChatRoomContainer>
-    );
+const ChatRoom = ({ text, name, roomid }: IChatRoomList) => {
+  return (
+    <ChatRoomContainer>
+      <ChatRoomImg src={`./img/${name}.png`} />
+      <div>
+        <ChatRoomName>{name}</ChatRoomName>
+        <ChatRoomText>{text}</ChatRoomText>
+      </div>
+    </ChatRoomContainer>
+  );
 };
 
 const ChatRoomContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    height: 50px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 `;
-
-// const LinkTo = styled(Link)`
-//     text-decoration: none;
-//     color: black;
-//     display: flex;
-//     flex-direction: row;
-// `;
 
 const ChatRoomImg = styled.img`
   width: 40px;
@@ -38,7 +28,10 @@ const ChatRoomImg = styled.img`
   border-radius: 50%;
 `;
 
-const ChatRoomName = styled.div``;
+const ChatRoomName = styled.div`
+  font-size: 17px;
+  font-weight: 500;
+`;
 
 const ChatRoomText = styled.div``;
 
