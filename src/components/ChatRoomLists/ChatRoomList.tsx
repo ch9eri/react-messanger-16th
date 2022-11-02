@@ -1,15 +1,14 @@
 import message from '../../data/message.json';
 import ChatRoom from './ChatRoom';
-import { IChatRoomList } from '../../interface';
 import {Link} from 'react-router-dom';
 
 
 function ChatRoomList() {
     return (
         <div>
-            {message.map(({userid, text, name, roomid}:IChatRoomList)=>(
-                <Link to ={`/chatroom/${name}`} style={{textDecoration:'none', color:'black'}}>
-                    <ChatRoom key={userid} text={text} name={name} roomid={roomid} />
+            {message.map((Msg)=>(
+                <Link to ={`/chatroom/${Msg.name}`} style={{textDecoration:'none', color:'black'}}>
+                    <ChatRoom key={Msg.userid} text={Msg.msg[Msg.msg.length-1].text} name={Msg.name} />
                 </Link>
             ))}
         </div>

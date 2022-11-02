@@ -19,7 +19,7 @@
       {
         "userid": 2,
         "name": "orange",
-        "text": "오렌지를 먹은 지 얼마나 오랜지",
+        "text": "오렌지를 먹은 지 얼마나 오랜지?",
         "msgid": 3
       }
     ]
@@ -29,7 +29,24 @@
     "userid": 3,
     "name": "banana",
     "msg": [
-      
+      {
+        "userid": 1,
+        "name": "ch9eri",
+        "msgid": 4,
+        "text": "안녕 나는 채리"
+      },
+      {
+        "userid": 3,
+        "name": "banana",
+        "text": "안녕 나는 바나나",
+        "msgid": 5
+      },
+      {
+        "userid": 3,
+        "name": "banana",
+        "text": "바나나 먹으면 세오스한테 바나나?",
+        "msgid": 6
+      }
     ]
   },
   {
@@ -37,7 +54,24 @@
     "userid": 4,
     "name": "grape",
     "msg": [
-      
+      {
+        "userid": 1,
+        "name": "ch9eri",
+        "msgid": 7,
+        "text": "안녕 나는 채리"
+      },
+      {
+        "userid": 4,
+        "name": "grape",
+        "text": "안녕 나는 포도",
+        "msgid": 8
+      },
+      {
+        "userid": 4,
+        "name": "grape",
+        "text": "놀고시포도 참아?",
+        "msgid": 9
+      }
     ]
   },
   {
@@ -45,7 +79,24 @@
     "userid": 5,
     "name": "watermelon",
     "msg": [
-      
+      {
+        "userid": 1,
+        "name": "ch9eri",
+        "msgid": 10,
+        "text": "안녕 나는 채리"
+      },
+      {
+        "userid": 5,
+        "name": "watermelon",
+        "text": "안녕 나는 수박",
+        "msgid": 11
+      },
+      {
+        "userid": 5,
+        "name": "watermelon",
+        "text": "과제를 할 수박에?",
+        "msgid": 12
+      }
     ]
   }
   

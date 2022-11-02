@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IUser,IChat } from '../../interface';
+import { IUser,IChatBoard } from '../../interface';
 import { userAtom } from '../../atoms';
 import {useRecoilState} from 'recoil';
+import message from '../../data/message.json';
 
-const Chat = ({ text, name }: IChat) => {
+const Chat = ({ name, msg, roomid }: any) => {
   const [currentUser, ] = useRecoilState<IUser>(userAtom);
   return (
     <>
@@ -13,7 +14,7 @@ const Chat = ({ text, name }: IChat) => {
           <UserImg src={`./img/${name}.png`} />
           <div>
             <UserName1>{name}</UserName1>
-            <Text>{text}</Text>
+            <Text>{msg.text}</Text>
           </div>
         </Li1>
       ) : (
@@ -21,7 +22,7 @@ const Chat = ({ text, name }: IChat) => {
           <UserImg src={`./img/${name}.png`} />
           <div>
             <UserName2>{name}</UserName2>
-            <Text>{text}</Text>
+            <Text></Text>
           </div>
         </Li2>
       )}

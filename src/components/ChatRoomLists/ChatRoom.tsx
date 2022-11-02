@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IChatRoomList } from '../../interface';
 
-const ChatRoom = ({ text, name, roomid }: IChatRoomList) => {
+const ChatRoom = ({ text, name }: any) => {
   return (
     <ChatRoomContainer>
       <ChatRoomImg src={`./img/${name}.png`} />
@@ -33,6 +33,10 @@ const ChatRoomName = styled.div`
   font-weight: 500;
 `;
 
-const ChatRoomText = styled.div``;
+const ChatRoomText = styled.div`
+  color: gray;
+  font-size: 13px;
+  margin-top: 2px;
+`;
 
 export default ChatRoom;
