@@ -1,11 +1,21 @@
 import styled from 'styled-components';
 import FriendList from '../components/Friends/FriendList';
+import { useState } from 'react';
+import SearchInput from '../components/Friends/SearchInput';
+import { BsSearch } from 'react-icons/bs';
 
-const Friends = () => {
+const FriendsPage = () => {
+  const [isSearch, setIsSearch] = useState(false);
   return (
     <FriendPageContainer>
-      <h3>친구</h3>
-      <FriendList />
+      <Head>
+        <h3>친구</h3>
+        <BsSearch
+          onClick={() => setIsSearch(!isSearch)}
+          style={{ fontSize: '20px', cursor: 'pointer', padding: '10px' }}
+        />
+      </Head>
+      {isSearch ? <SearchInput /> : <FriendList />}
     </FriendPageContainer>
   );
 };
@@ -16,4 +26,10 @@ const FriendPageContainer = styled.div`
   padding: 10px;
 `;
 
-export default Friends;
+const Head = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export default FriendsPage;

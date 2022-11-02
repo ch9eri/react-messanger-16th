@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import user from '../../data/user.json';
 import { IUser } from '../../interface';
 import { userAtom } from '../../atoms';
-import {useRecoilState} from 'recoil';
+import { useRecoilState } from 'recoil';
 
-function ChatUsers(){
+function ChatUsers() {
   const [currentUser, setCurrentUser] = useRecoilState<IUser>(userAtom);
   const onToggleUser = () => {
     currentUser === user[0] ? setCurrentUser(user[1]) : setCurrentUser(user[0]);
-    console.log(setCurrentUser.name)
+    console.log(setCurrentUser.name);
   };
 
   return (
@@ -20,7 +20,7 @@ function ChatUsers(){
       </UserBtn>
     </>
   );
-};
+}
 
 const UserBtn = styled.button`
   display: flex;

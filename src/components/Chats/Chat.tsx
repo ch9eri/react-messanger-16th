@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IUser,IChatBoard } from '../../interface';
+import { IUser, IChatBoard } from '../../interface';
 import { userAtom } from '../../atoms';
-import {useRecoilState} from 'recoil';
+import { useRecoilState } from 'recoil';
 import message from '../../data/message.json';
 
 const Chat = ({ name, msg, roomid }: any) => {
-  const [currentUser, ] = useRecoilState<IUser>(userAtom);
+  const [currentUser] = useRecoilState<IUser>(userAtom);
   return (
     <>
       {name === currentUser.name ? (
