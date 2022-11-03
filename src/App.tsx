@@ -19,7 +19,7 @@ function App() {
             <Routes>
               <Route path="/" element={<FriendsPage />} />
               <Route path="/chatlist" element={<ChatRoomListPage />} />
-              <Route path="/chatroom/:name" element={<ChatsPage />} />
+              <Route path="/chatroom/:roomid" element={<ChatsPage />} />
               <Route path="/settings" element={<SettingsPage />} />
             </Routes>
           </Container>

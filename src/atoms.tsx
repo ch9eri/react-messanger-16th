@@ -1,10 +1,10 @@
 import { atom } from 'recoil';
 import message from './data/message.json';
 import user from './data/user.json';
-import { IUserChat,IUser } from './interface';
+import { IChatBoard,IUser } from './interface';
 
 
-export const listAtom = atom<IUserChat[]>({
+export const listAtom = atom<IChatBoard[]>({
     key: 'chatList',
     default: message
 });

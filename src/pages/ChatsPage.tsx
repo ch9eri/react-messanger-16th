@@ -2,17 +2,22 @@ import styled from 'styled-components';
 import ChatUsers from '../components/Chats/ChatUsers';
 import ChatInput from '../components/Chats/ChatInput';
 import ChatBoard from '../components/Chats/ChatBoard';
-import { IUserChat } from '../interface';
+import { IChatBoard } from '../interface';
 import { listAtom } from '../atoms';
 import {useRecoilState} from 'recoil';
+import { useParams } from 'react-router-dom';
 
 function ChatsPage() {
-  const [chatList, ] = useRecoilState<IUserChat[]>(listAtom);
+  const roomParams = useParams();
+  const roomid = roomParams.roomid;
+
+  const [chatList, ] = useRecoilState<IChatBoard[]>(listAtom);
+  
   
   return (
     <ChatsPageContainer>
-      <ChatUsers />
-      <ChatBoard />
+      <ChatUsers roomid={roomid} />
+      <ChatBoard roomid={roomid} />
       <ChatInput />
     </ChatsPageContainer>
   );

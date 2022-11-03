@@ -14,7 +14,7 @@ const Chat = ({ name, msg, roomid }: any) => {
           <UserImg src={`./img/${name}.png`} />
           <div>
             <UserName1>{name}</UserName1>
-            <Text>{msg.text}</Text>
+            <Text>{message[roomid-1].msg[0].text}</Text>
           </div>
         </Li1>
       ) : (

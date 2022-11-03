@@ -5,8 +5,12 @@ import { IUserChat, IChatBoard } from '../../interface';
 import { listAtom } from '../../atoms';
 import {useRecoilState} from 'recoil';
 
-function ChatBoard() {
-  const [chatList, ] = useRecoilState<IUserChat[]>(listAtom);
+function ChatBoard({roomid}:any) {
+  interface ICurrentChatList {
+    currentChatList?: IChatBoard[];
+  }  
+
+  const [chatList, ] = useRecoilState<IChatBoard[]>(listAtom);
   const chatBoardRef = useRef<HTMLDivElement>(null);
 
   const scrollDown = () => {
@@ -19,16 +23,22 @@ function ChatBoard() {
     scrollDown();
   }, [chatList]);
 
+  const currentChatList = chatList[roomid-1];
+
+  useEffect(()=> {
+    console.log('currentChatList:',currentChatList);
+    console.log('chatList',chatList);
+  },);
 
   return (
     <ChatBoardContainer ref={chatBoardRef}>
       <UserChat>
-        {chatList.map(({ name, msg,roomid }: any) => (
-          <Chat key={name} name={name} msg={msg} roomid={roomid} />
-        ))}
+        {/* {currentChatList.msg.map((li:any) => (
+          <Chat key={li.name} name={li.name} msg={li.msg} />
+        ))} */}
       </UserChat>
     </ChatBoardContainer>
-  );
+  );                                                                                                 
 };
 
 const ChatBoardContainer = styled.div`

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { IUser, IUserChat } from '../../interface';
+import { IUser, IChatBoard } from '../../interface';
 import {listAtom,userAtom} from '../../atoms';
 import {useRecoilState} from 'recoil';
 
 const ChatInput = () => {
-  const [chatList, setChatList] = useRecoilState<IUserChat[]>(listAtom);
+  const [chatList, setChatList] = useRecoilState<IChatBoard[]>(listAtom);
   const [currentUser, ] = useRecoilState<IUser>(userAtom);
   const [text, setText] = useState('');
 

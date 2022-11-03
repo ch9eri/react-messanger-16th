@@ -21,10 +21,8 @@ interface IChatRoomList extends IUserChat {
   roomid?: number;
 }
 
-interface IChatBoard extends IUserChat {
-  msg: IUserChat[];
+interface IChatBoard extends IChatRoomList {
+  msg?: IUserChat[];
 }
-
-
 
 export type { IChat, IUserChat, IUser, IFriendList, IChatRoomList, IChatBoard };

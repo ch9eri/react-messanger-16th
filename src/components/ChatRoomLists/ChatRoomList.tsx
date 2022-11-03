@@ -7,13 +7,14 @@ function ChatRoomList() {
     <div>
       {message.map((Msg) => (
         <Link
-          to={`/chatroom/${Msg.name}`}
+          to={`/chatroom/${Msg.roomid}`}
           style={{ textDecoration: 'none', color: 'black' }}
         >
           <ChatRoom
             key={Msg.userid}
             text={Msg.msg[Msg.msg.length - 1].text}
             name={Msg.name}
+            roomid={Msg.roomid}
           />
         </Link>
       ))}
