@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IChatRoomList } from '../../interface';
 
-const ChatRoom = ({ text, name }: any) => {
+const ChatRoom = ({ text, name }: IChatRoomList) => {
   return (
     <ChatRoomContainer>
       <ChatRoomImg src={`./img/${name}.png`} />

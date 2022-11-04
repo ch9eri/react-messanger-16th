@@ -4,8 +4,6 @@ import user from '../../data/user.json';
 import { IUser,IChatBoard } from '../../interface';
 import { userAtom,listAtom } from '../../atoms';
 import { useRecoilState } from 'recoil';
-import message from '../../data/message.json';
-import {useEffect} from 'react';
 
 interface IopponentId {
   opponentId : number;
@@ -15,12 +13,6 @@ function ChatUsers({roomid}: any) {
   const [currentUser, setCurrentUser] = useRecoilState<IUser>(userAtom);
   const [chatList, ] = useRecoilState<IChatBoard[]>(listAtom);
   const opponentId:any = chatList[roomid-1].userid;
-  const opponentName = chatList[roomid-1].name;
-
-  useEffect(()=> {
-    console.log(currentUser);
-    console.log(opponentId);
-  },);
 
   const onToggleUser = () => {
     currentUser === user[0] ? setCurrentUser(user[opponentId]) : setCurrentUser(user[0]);
@@ -30,7 +22,7 @@ function ChatUsers({roomid}: any) {
   return (
     <>
       <UserBtn onClick={onToggleUser}>
-        <UserImg src={`./img/${currentUser.name}.png`} />
+        <UserImg src={`../img/${currentUser.name}.png`} />
         <UserName>{currentUser.name}</UserName>
       </UserBtn>
     </>

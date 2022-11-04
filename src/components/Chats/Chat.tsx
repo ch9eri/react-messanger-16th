@@ -1,28 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IUser, IChatBoard } from '../../interface';
+import { IUser, IChatRoomList } from '../../interface';
 import { userAtom } from '../../atoms';
 import { useRecoilState } from 'recoil';
-import message from '../../data/message.json';
+import { useEffect } from 'react';
 
-const Chat = ({ name, msg, roomid }: any) => {
+const Chat = ({ name, text }: IChatRoomList) => {
   const [currentUser] = useRecoilState<IUser>(userAtom);
+
+  useEffect(() => {
+    console.log(text);
+  });
+
   return (
     <>
       {name === currentUser.name ? (
         <Li1>
-          <UserImg src={`./img/${name}.png`} />
+          <UserImg src={`../img/${name}.png`} />
           <div>
             <UserName1>{name}</UserName1>
-            <Text>{message[roomid-1].msg[0].text}</Text>
+            <Text>{text}</Text>
           </div>
         </Li1>
       ) : (
         <Li2>
-          <UserImg src={`./img/${name}.png`} />
+          <UserImg src={`../img/${name}.png`} />
           <div>
             <UserName2>{name}</UserName2>
-            <Text></Text>
+            <Text>{text}</Text>
           </div>
         </Li2>
       )}

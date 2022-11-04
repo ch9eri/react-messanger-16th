@@ -3,14 +3,14 @@ interface IChat {
   name?: string;
 }
 
-interface IUserChat extends IUser {
-  msgid?: number;
-  text?: string;
-}
-
 interface IUser {
   userid?: number;
   name?: string;
+}
+
+interface IUserChat extends IUser {
+  msgid?: number;
+  text?: string;
 }
 
 interface IFriendList extends IUser {
@@ -22,7 +22,7 @@ interface IChatRoomList extends IUserChat {
 }
 
 interface IChatBoard extends IChatRoomList {
-  msg?: IUserChat[];
+  msg: IUserChat[];
 }
 
 export type { IChat, IUserChat, IUser, IFriendList, IChatRoomList, IChatBoard };

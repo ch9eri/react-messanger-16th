@@ -1,34 +1,37 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IUser, IChatBoard } from '../../interface';
-import {listAtom,userAtom} from '../../atoms';
-import {useRecoilState} from 'recoil';
+import { listAtom, userAtom } from '../../atoms';
+import { useRecoilState } from 'recoil';
 
-const ChatInput = () => {
+const ChatInput = ({ roomid }: any) => {
   const [chatList, setChatList] = useRecoilState<IChatBoard[]>(listAtom);
-  const [currentUser, ] = useRecoilState<IUser>(userAtom);
-  const [text, setText] = useState('');
+  const [currentUser] = useRecoilState<IUser>(userAtom);
+  const [inputText, setInputText] = useState('');
+  const [newMsgList, setNewMsgList] = useState(chatList[roomid - 1].msg);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
+    setInputText(event.target.value);
   };
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newChatList = chatList.concat({
+    const newChatList: any = chatList[roomid - 1].msg.concat({
       msgid: Date.now(),
-      text,
+      text: inputText,
       name: currentUser.name,
+      userid: currentUser.userid,
     });
-    setChatList(newChatList);
-    setText('');
-    console.log(currentUser.name);
+    setNewMsgList(newChatList);
+    setInputText('');
+    console.log(newChatList);
+    console.log(newMsgList);
   };
 
   return (
     <ChatInputContainer onSubmit={onSubmit}>
       <Input
-        value={text}
+        value={inputText}
         onChange={onChange}
         type="text"
         placeholder="메세지 입력창"

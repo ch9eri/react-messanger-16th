@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IUser, IFriendList } from '../../interface';
-import { userAtom } from '../../atoms';
-import { useRecoilState } from 'recoil';
+import { IFriendList } from '../../interface';
 
 const Friend = ({ status, name }: IFriendList) => {
-  const [currentUser] = useRecoilState<IUser>(userAtom);
   return (
     <UserContainer>
       <UserImg src={`./img/${name}.png`} />
