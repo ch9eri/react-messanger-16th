@@ -7,7 +7,7 @@ import SettingsPage from './pages/SettingsPage';
 import ChatsPage from './pages/ChatsPage';
 import NavBar from './NavBar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+//vercel 배포
 function App() {
   return (
     <BrowserRouter>
