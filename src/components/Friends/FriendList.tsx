@@ -19,7 +19,7 @@ function FriendList() {
           </Link>
         ))}
       </div>
-      <hr style={{ border: 'solid 0.5px pink', width: '290px' }} />
+      <hr style={{ border: 'solid 0.5px gray', width: '290px' }} />
       <div>
         <FriendNum>친구 {user.length - 1}</FriendNum>
         {onlyfriendslist.map(({ userid, status, name }: IFriendList) => (
