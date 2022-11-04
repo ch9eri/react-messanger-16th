@@ -18,7 +18,7 @@ const UserContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 5fr;
   height: 50px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   margin-left: 10px;
 `;
 

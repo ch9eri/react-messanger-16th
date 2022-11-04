@@ -8,7 +8,7 @@ const ChatInput = ({ roomid }: any) => {
   const [chatList, setChatList] = useRecoilState<IChatBoard[]>(listAtom);
   const [currentUser] = useRecoilState<IUser>(userAtom);
   const [inputText, setInputText] = useState('');
-  const [newMsgList, setNewMsgList] = useState(chatList[roomid - 1].msg);
+  const [newMsgList, setNewMsgList] = useState(chatList[roomid].msg);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
@@ -16,7 +16,7 @@ const ChatInput = ({ roomid }: any) => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newChatList: any = chatList[roomid - 1].msg.concat({
+    const newChatList: any = chatList[roomid].msg.concat({
       msgid: Date.now(),
       text: inputText,
       name: currentUser.name,

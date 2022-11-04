@@ -19,7 +19,7 @@ function ChatBoard({ roomid }: any) {
     scrollDown();
   }, [chatList]);
 
-  const currentChatList = chatList[roomid - 1].msg;
+  const currentChatList = chatList[roomid].msg;
 
   useEffect(() => {
     console.log('currentChatList:', currentChatList);

@@ -21,7 +21,7 @@ const SearchInput = () => {
       <SearchList>
         {filterFriend.map((filtered) => (
           <Link
-            to={`/chatroom/${filtered.name}`}
+            to={`/chatroom/${filtered.userid}`}
             style={{ textDecoration: 'none', color: 'black' }}
           >
             <Friend status={filtered.status} name={filtered.name} />

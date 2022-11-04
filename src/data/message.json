@@ -1,5 +1,18 @@
 [
   {
+    "roomid": 0,
+    "userid": 0,
+    "name": "ch9eri",
+    "msg": [
+      {
+        "userid": 0,
+        "name": "ch9eri",
+        "msgid": 0,
+        "text": "나와의 채팅방!"
+      }
+    ]
+  },
+  {
     "roomid": 1,
     "userid": 1,
     "name": "orange",

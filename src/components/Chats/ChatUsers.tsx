@@ -12,7 +12,7 @@ interface IopponentId {
 function ChatUsers({roomid}: any) {
   const [currentUser, setCurrentUser] = useRecoilState<IUser>(userAtom);
   const [chatList, ] = useRecoilState<IChatBoard[]>(listAtom);
-  const opponentId:any = chatList[roomid-1].userid;
+  const opponentId:any = chatList[roomid].userid;
 
   const onToggleUser = () => {
     currentUser === user[0] ? setCurrentUser(user[opponentId]) : setCurrentUser(user[0]);
