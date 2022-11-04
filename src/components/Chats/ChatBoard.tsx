@@ -21,12 +21,6 @@ function ChatBoard({ roomid }: any) {
 
   const currentChatList = chatList[roomid].msg;
 
-  useEffect(() => {
-    console.log('currentChatList:', currentChatList);
-    console.log('chatList', chatList);
-    console.log(roomid);
-  });
-
   return (
     <ChatBoardContainer ref={chatBoardRef}>
       <UserChat>

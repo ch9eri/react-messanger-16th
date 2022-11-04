@@ -3,14 +3,9 @@ import styled from 'styled-components';
 import { IUser, IChatRoomList } from '../../interface';
 import { userAtom } from '../../atoms';
 import { useRecoilState } from 'recoil';
-import { useEffect } from 'react';
 
 const Chat = ({ name, text }: IChatRoomList) => {
   const [currentUser] = useRecoilState<IUser>(userAtom);
-
-  useEffect(() => {
-    console.log(text);
-  });
 
   return (
     <>
@@ -76,7 +71,7 @@ const Text = styled.span`
   padding: 10px;
   border-radius: 10px;
   font-size: 13px;
-  margin-top:10px;
+  margin-top: 10px;
 `;
 
 export default Chat;

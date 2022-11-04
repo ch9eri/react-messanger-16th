@@ -1,22 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import user from '../../data/user.json';
-import { IUser,IChatBoard } from '../../interface';
-import { userAtom,listAtom } from '../../atoms';
+import { IUser, IChatBoard } from '../../interface';
+import { userAtom, listAtom } from '../../atoms';
 import { useRecoilState } from 'recoil';
+import { useEffect } from 'react';
 
-interface IopponentId {
-  opponentId : number;
-}
-
-function ChatUsers({roomid}: any) {
+function ChatUsers({ roomid }: any) {
   const [currentUser, setCurrentUser] = useRecoilState<IUser>(userAtom);
-  const [chatList, ] = useRecoilState<IChatBoard[]>(listAtom);
-  const opponentId:any = chatList[roomid].userid;
+  const [chatList] = useRecoilState<IChatBoard[]>(listAtom);
+  const opponentId: any = chatList[roomid].userid;
+
+  useEffect(() => {
+    console.log(currentUser);
+  });
 
   const onToggleUser = () => {
-    currentUser === user[0] ? setCurrentUser(user[opponentId]) : setCurrentUser(user[0]);
-    console.log(currentUser);
+    currentUser === user[0]
+      ? setCurrentUser(user[opponentId])
+      : setCurrentUser(user[0]);
   };
 
   return (

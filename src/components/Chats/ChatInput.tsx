@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { IUser, IChatBoard } from '../../interface';
 import { listAtom, userAtom } from '../../atoms';
 import { useRecoilState } from 'recoil';
+import user from '../../data/user.json';
 
 const ChatInput = ({ roomid }: any) => {
   const [chatList, setChatList] = useRecoilState<IChatBoard[]>(listAtom);
@@ -16,16 +17,24 @@ const ChatInput = ({ roomid }: any) => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     const newChatList: any = chatList[roomid].msg.concat({
       msgid: Date.now(),
       text: inputText,
       name: currentUser.name,
       userid: currentUser.userid,
     });
+    const newObj = {
+      roomid: parseInt(roomid),
+      userid: user[roomid].userid,
+      name: currentUser.name,
+      msg: newChatList,
+    };
     setNewMsgList(newChatList);
+    setChatList(() => {
+      return { ...chatList, [roomid]: newObj };
+    });
     setInputText('');
-    console.log(newChatList);
-    console.log(newMsgList);
   };
 
   return (
