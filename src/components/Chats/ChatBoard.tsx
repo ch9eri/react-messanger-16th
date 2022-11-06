@@ -1,14 +1,16 @@
 import React, { useRef, useEffect } from 'react';
 import Chat from './Chat';
 import styled from 'styled-components';
-import { IUserChat } from './interface';
+import { IChatBoard } from '../../interface';
+import { listAtom } from '../../atoms';
+import { useRecoilState } from 'recoil';
 
-const ChatBoard = ({ currentUser, chatList, setChatList }: any) => {
+function ChatBoard({ roomid }: any) {
+  const [chatList] = useRecoilState<IChatBoard[]>(listAtom);
   const chatBoardRef = useRef<HTMLDivElement>(null);
 
   const scrollDown = () => {
     if (chatBoardRef.current) {
-      // chatBoardRef.current.scrollTo(0, chatBoardRef.current.scrollHeight);
       chatBoardRef.current.scrollTop = chatBoardRef.current.scrollHeight;
     }
   };
@@ -17,16 +19,18 @@ const ChatBoard = ({ currentUser, chatList, setChatList }: any) => {
     scrollDown();
   }, [chatList]);
 
+  const currentChatList = chatList[roomid].msg;
+
   return (
     <ChatBoardContainer ref={chatBoardRef}>
       <UserChat>
-        {chatList.map(({ text, name, msgid, userid }: IUserChat) => (
-          <Chat key={msgid} text={text} name={name} currentUser={currentUser} />
+        {currentChatList.map((li: any) => (
+          <Chat key={li.name} name={li.name} text={li.text} />
         ))}
       </UserChat>
     </ChatBoardContainer>
   );
-};
+}
 
 const ChatBoardContainer = styled.div`
   background-color: #85c1e9;

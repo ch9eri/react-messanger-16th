@@ -1,39 +1,31 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import ChatInput from './components/ChatInput';
-import ChatBoard from './components/ChatBoard';
-import ChatUsers from './components/ChatUsers';
-import { useState } from 'react';
-import user from './data/user.json';
-import message from './data/message.json';
-import { IUser, IUserChat } from './components/interface';
-
+import { RecoilRoot } from 'recoil';
+import ChatRoomListPage from './pages/ChatRoomListPage';
+import FriendsPage from './pages/FriendsPage';
+import SettingsPage from './pages/SettingsPage';
+import ChatsPage from './pages/ChatsPage';
+import NavBar from './NavBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+//vercel 배포
 function App() {
-  const [chatList, setChatList] = useState<IUserChat[]>(message);
-  const [currentUser, setCurrentUser] = useState<IUser>(user[0]);
-
   return (
-    <>
-      <GlobalStyle />
-      <Wrapper>
-        <Container>
-          <ChatUsers
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
-          <ChatBoard
-            chatList={chatList}
-            setChatList={setChatList}
-            currentUser={currentUser}
-          />
-          <ChatInput
-            chatList={chatList}
-            setChatList={setChatList}
-            currentUser={currentUser}
-          />
-        </Container>
-      </Wrapper>
-    </>
+    <BrowserRouter>
+      <RecoilRoot>
+        <GlobalStyle />
+        <Wrapper>
+          <Container>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<FriendsPage />} />
+              <Route path="/chatlist" element={<ChatRoomListPage />} />
+              <Route path="/chatroom/:roomid" element={<ChatsPage />} />
+              <Route path="/settings" element={<SettingsPage />} />
+            </Routes>
+          </Container>
+        </Wrapper>
+      </RecoilRoot>
+    </BrowserRouter>
   );
 }
 
@@ -69,7 +61,7 @@ const Container = styled.div`
   height: 600px;
   box-shadow: 1px 1px 10px gray;
   display: grid;
-  grid-template-rows: 1fr 5fr 1.5fr;
+  grid-template-columns: 1fr 5fr;
 `;
 
 export default App;
