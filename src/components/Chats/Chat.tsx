@@ -65,13 +65,15 @@ const UserName2 = styled.span`
   margin-left: 5px;
 `;
 
-const Text = styled.span`
+const Text = styled.div`
   background-color: white;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
   font-size: 13px;
   margin-top: 10px;
+  max-width: 100px;
+  word-wrap: break-word;
 `;
 
 export default Chat;
